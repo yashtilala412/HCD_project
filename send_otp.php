@@ -1,6 +1,7 @@
 <?php
-require 'vendor/autoload.php'; // Ensure you have installed PHPMailer via Composer
-
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
