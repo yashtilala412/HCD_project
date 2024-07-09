@@ -47,7 +47,7 @@
                             <a class="nav-link" href="login.php">login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="signup.php">signup</a>
+                            <a class="nav-link" href="email_entry_page.php">signup</a>
                         </li>
                     </ul>
                 </div>
