@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->SMTPAuth = true;
         $mail->Username = 'tilalayash08@gmail.com'; // SMTP username
         $mail->Password = 'lxvmxspfujlkfpzp'; // SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
         //Recipients
