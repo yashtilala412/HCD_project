@@ -6,36 +6,25 @@
     <title>Enter OTP</title>
     <style>
 body {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Josefin Sans', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #bbdefb;
+    background-color: #c5cae9;
 }
 .container {
     background-color: #ffffff;
-    padding: 35px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 18px;
-    width: 300px;
+    padding: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    width: 320px;
     text-align: center;
-    color: #42a5f5;
+    border: 1px solid #5c6bc0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-        .container h2 {
+ .container h2 {
             margin-bottom: 20px;
         }
         .input-group {
