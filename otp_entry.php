@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enter OTP</title>
     <style>
-   body {
-    font-family: 'Lato', sans-serif;
+  body {
+    font-family: 'Nunito', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #e1bee7;
+    background-color: #ffe0b2;
 }
 .container {
     background-color: #ffffff;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    width: 300px;
+    padding: 35px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    width: 340px;
     text-align: center;
-    color: #6a1b9a;
+    color: #ef6c00;
 }
+
 
 
 
