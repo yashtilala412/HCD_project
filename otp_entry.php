@@ -6,23 +6,24 @@
     <title>Enter OTP</title>
     <style>
 body {
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #b2dfdb;
+    background-color: #ffcc80;
 }
 .container {
     background-color: #ffffff;
-    padding: 20px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    width: 330px;
+    padding: 35px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
+    width: 320px;
     text-align: center;
-    border: 2px solid #00796b;
+    color: #fb8c00;
 }
+
 
 
 
