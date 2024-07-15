@@ -53,6 +53,9 @@
 .navbar .navbar-toggler {
     margin: 10px;
 }
+.navbar .navbar-toggler:active {
+    transform: scale(0.95);
+}
 
 
 .navbar #navbarNav {
