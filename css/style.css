@@ -47,6 +47,9 @@
 .navbar .navbar-toggler {
     font-size: 18px;
 }
+.navbar .navbar-toggler {
+    transition: background 0.3s ease, color 0.3s ease;
+}
 
 
 .navbar #navbarNav {
