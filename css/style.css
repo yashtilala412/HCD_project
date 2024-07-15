@@ -44,6 +44,9 @@
     background: #ddd;
     color: #000;
 }
+.navbar .navbar-toggler {
+    font-size: 18px;
+}
 
 
 .navbar #navbarNav {
