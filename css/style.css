@@ -34,6 +34,9 @@
 .navbar .navbar-toggler {
     border-radius: 50%;
 }
+.navbar .navbar-toggler {
+    border: 2px solid #fff;
+}
 
 
 .navbar #navbarNav {
