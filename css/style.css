@@ -37,6 +37,9 @@
 .navbar .navbar-toggler {
     border: 2px solid #fff;
 }
+.navbar .navbar-toggler {
+    padding: 20px;
+}
 
 
 .navbar #navbarNav {
