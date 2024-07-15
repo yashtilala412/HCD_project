@@ -50,6 +50,9 @@
 .navbar .navbar-toggler {
     transition: background 0.3s ease, color 0.3s ease;
 }
+.navbar .navbar-toggler {
+    margin: 10px;
+}
 
 
 .navbar #navbarNav {
