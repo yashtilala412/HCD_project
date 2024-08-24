@@ -141,6 +141,9 @@ echo '<script>document.querySelector(".password").addEventListener("input", func
     let strength = calculatePasswordStrength(e.target.value);
     document.getElementById("password-strength").innerText = strength;
 });</script>';
+if (isset($_POST['remember_device'])) {
+  setcookie("device_remember", "true", time() + (30 * 86400), "/", "", true, true);
+}
 
                 
       } else {
