@@ -135,6 +135,7 @@ if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
   die("Invalid CSRF token.");
 }
 setcookie("user_login", $email, time() + (86400 * 30), "/", "", true, true);
+session_set_cookie_params(['httponly' => true, 'secure' => true, 'samesite' => 'Strict']);
 
                 
       } else {
