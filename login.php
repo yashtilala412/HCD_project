@@ -104,7 +104,11 @@ mysqli_query($conn, "UPDATE users SET last_ip='$ip_address' WHERE id=" . $_SESSI
         }
 
         echo "<p>Last login: " . $row['last_login'] . " from IP: " . $row['last_ip'] . "</p>";
-
+        echo '<div class="captcha-container">';
+        echo '<img src="captcha.php" alt="CAPTCHA">';
+        echo '<input type="text" name="captcha" placeholder="Enter CAPTCHA">';
+        echo '</div>';
+        
       } else {
 
 
