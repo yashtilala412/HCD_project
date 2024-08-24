@@ -144,6 +144,10 @@ echo '<script>document.querySelector(".password").addEventListener("input", func
 if (isset($_POST['remember_device'])) {
   setcookie("device_remember", "true", time() + (30 * 86400), "/", "", true, true);
 }
+$device_info = $_SERVER['HTTP_USER_AGENT'];
+if ($device_info !== $row['last_device']) {
+    echo "<div class='message'><p>New device detected. Is this you?</p></div>";
+}
 
                 
       } else {
