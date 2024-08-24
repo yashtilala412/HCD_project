@@ -71,6 +71,8 @@ $_SESSION['timeout'] = time();
 if (isset($_POST['remember_me'])) {
   setcookie("user_login", $email, time() + (86400 * 30), "/");
 }
+$last_login = date('Y-m-d H:i:s');
+mysqli_query($conn, "UPDATE users SET last_login='$last_login' WHERE id=" . $_SESSION['id']);
 
                 
 
