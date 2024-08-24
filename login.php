@@ -108,7 +108,11 @@ mysqli_query($conn, "UPDATE users SET last_ip='$ip_address' WHERE id=" . $_SESSI
         echo '<img src="captcha.php" alt="CAPTCHA">';
         echo '<input type="text" name="captcha" placeholder="Enter CAPTCHA">';
         echo '</div>';
-        
+        if ($_POST['captcha'] !== $_SESSION['captcha_code']) {
+          echo "<div class='message'><p>Invalid CAPTCHA. Please try again.</p></div>";
+          exit;
+      }
+              
       } else {
 
 
