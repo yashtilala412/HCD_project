@@ -130,7 +130,11 @@ mysqli_query($conn, "UPDATE users SET last_ip='$ip_address' WHERE id=" . $_SESSI
 if ($decrypt) {
   session_regenerate_id(true);
 }
-                    
+if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+  error_log("CSRF token mismatch for user " . $email);
+  die("Invalid CSRF token.");
+}
+                  
       } else {
 
 
