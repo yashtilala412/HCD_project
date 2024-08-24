@@ -103,6 +103,7 @@ mysqli_query($conn, "UPDATE users SET last_ip='$ip_address' WHERE id=" . $_SESSI
 
         }
 
+        echo "<p>Last login: " . $row['last_login'] . " from IP: " . $row['last_ip'] . "</p>";
 
       } else {
 
