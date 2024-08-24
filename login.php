@@ -124,6 +124,9 @@ mysqli_query($conn, "UPDATE users SET last_ip='$ip_address' WHERE id=" . $_SESSI
   }
   $status = $decrypt ? 'success' : 'failure';
   mysqli_query($conn, "INSERT INTO login_logs (email, status, ip_address, attempt_time) VALUES ('$email', '$status', '$ip_address', NOW())");
+  if (preg_match('/select|insert|update|delete|drop/i', $email) || preg_match('/select|insert|update|delete|drop/i', $pass)) {
+    die("SQL injection attempt detected.");
+}
                       
       } else {
 
