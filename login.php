@@ -127,7 +127,10 @@ mysqli_query($conn, "UPDATE users SET last_ip='$ip_address' WHERE id=" . $_SESSI
   if (preg_match('/select|insert|update|delete|drop/i', $email) || preg_match('/select|insert|update|delete|drop/i', $pass)) {
     die("SQL injection attempt detected.");
 }
-                      
+if ($decrypt) {
+  session_regenerate_id(true);
+}
+                    
       } else {
 
 
