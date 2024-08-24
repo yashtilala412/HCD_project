@@ -47,7 +47,10 @@ if (session_status() === PHP_SESSION_NONE) {
             echo "<div class='message'><p>Too many login attempts. Please try again later.</p></div>";
             exit;
         }
-        
+        if (!$decrypt) {
+          $_SESSION['login_attempts']++;
+      }
+      
 
           if ($decrypt) {
             $_SESSION['id'] = $row['id'];
