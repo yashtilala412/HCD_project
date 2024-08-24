@@ -53,6 +53,7 @@ if (session_status() === PHP_SESSION_NONE) {
       if ($decrypt) {
         $_SESSION['login_attempts'] = 0;
     }
+    $hashedPassword = password_hash($pass, PASSWORD_BCRYPT);
           
 
           if ($decrypt) {
