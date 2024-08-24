@@ -50,7 +50,9 @@ session_start();
 
             echo "<a href='login.php'><button class='btn'>Go Back</button></a>";
           }
-
+          $email = htmlspecialchars(mysqli_real_escape_string($conn, $_POST['email']));
+          $pass = htmlspecialchars(mysqli_real_escape_string($conn, $_POST['password']));
+          
         } else {
           echo "<div class='message'>
                     <p>Wrong Email or Password</p>
