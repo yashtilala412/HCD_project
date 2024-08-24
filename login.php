@@ -149,6 +149,9 @@ if ($device_info !== $row['last_device']) {
     echo "<div class='message'><p>New device detected. Is this you?</p></div>";
 }
 mail($email, "New Login Notification", "You have successfully logged in from a new device.", "From: no-reply@yourdomain.com");
+if (mysqli_errno($conn)) {
+  echo "<div class='message'><p>An error occurred. Please try again later.</p></div>";
+}
 
                 
       } else {
