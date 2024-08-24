@@ -59,7 +59,11 @@ if (session_status() === PHP_SESSION_NONE) {
   }
   $token = bin2hex(random_bytes(32));
   $_SESSION['csrf_token'] = $token;
-              
+  if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+    die("Invalid CSRF token.");
+}
+
+                
 
           if ($decrypt) {
             $_SESSION['id'] = $row['id'];
