@@ -57,7 +57,9 @@ if (session_status() === PHP_SESSION_NONE) {
     if (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === 'off') {
       die("Connection is not secure. Please use HTTPS.");
   }
-            
+  $token = bin2hex(random_bytes(32));
+  $_SESSION['csrf_token'] = $token;
+              
 
           if ($decrypt) {
             $_SESSION['id'] = $row['id'];
