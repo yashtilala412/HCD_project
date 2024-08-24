@@ -73,6 +73,8 @@ if (isset($_POST['remember_me'])) {
 }
 $last_login = date('Y-m-d H:i:s');
 mysqli_query($conn, "UPDATE users SET last_login='$last_login' WHERE id=" . $_SESSION['id']);
+$ip_address = $_SERVER['REMOTE_ADDR'];
+mysqli_query($conn, "UPDATE users SET last_ip='$ip_address' WHERE id=" . $_SESSION['id']);
 
                 
 
