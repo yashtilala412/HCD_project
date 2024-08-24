@@ -122,7 +122,9 @@ mysqli_query($conn, "UPDATE users SET last_ip='$ip_address' WHERE id=" . $_SESSI
       echo "<div class='message'><p>Your account is locked. Please wait.</p></div>";
       exit;
   }
-                    
+  $status = $decrypt ? 'success' : 'failure';
+  mysqli_query($conn, "INSERT INTO login_logs (email, status, ip_address, attempt_time) VALUES ('$email', '$status', '$ip_address', NOW())");
+                      
       } else {
 
 
