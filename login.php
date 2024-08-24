@@ -39,7 +39,15 @@ if (session_status() === PHP_SESSION_NONE) {
           $password = $row['password'];
 
           $decrypt = password_verify($pass, $password);
-
+          if (!isset($_SESSION['login_attempts'])) {
+            $_SESSION['login_attempts'] = 0;
+        }
+        
+        if ($_SESSION['login_attempts'] > 3) {
+            echo "<div class='message'><p>Too many login attempts. Please try again later.</p></div>";
+            exit;
+        }
+        
 
           if ($decrypt) {
             $_SESSION['id'] = $row['id'];
