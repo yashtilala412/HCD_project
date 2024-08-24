@@ -54,7 +54,10 @@ if (session_status() === PHP_SESSION_NONE) {
         $_SESSION['login_attempts'] = 0;
     }
     $hashedPassword = password_hash($pass, PASSWORD_BCRYPT);
-          
+    if (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === 'off') {
+      die("Connection is not secure. Please use HTTPS.");
+  }
+            
 
           if ($decrypt) {
             $_SESSION['id'] = $row['id'];
