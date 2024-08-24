@@ -50,7 +50,10 @@ if (session_status() === PHP_SESSION_NONE) {
         if (!$decrypt) {
           $_SESSION['login_attempts']++;
       }
-      
+      if ($decrypt) {
+        $_SESSION['login_attempts'] = 0;
+    }
+          
 
           if ($decrypt) {
             $_SESSION['id'] = $row['id'];
