@@ -134,7 +134,12 @@ if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
   error_log("CSRF token mismatch for user " . $email);
   die("Invalid CSRF token.");
 }
-                  
+if ($row['mfa_enabled']) {
+  $_SESSION['mfa_pending'] = true;
+  header("location: mfa.php");
+  exit;
+}
+                
       } else {
 
 
