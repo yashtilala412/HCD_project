@@ -112,7 +112,13 @@ mysqli_query($conn, "UPDATE users SET last_ip='$ip_address' WHERE id=" . $_SESSI
           echo "<div class='message'><p>Invalid CAPTCHA. Please try again.</p></div>";
           exit;
       }
-              
+      if ($_SESSION['login_attempts'] > 5) {
+        $lockout_time = 15 * 60; // 15 minutes
+        mysqli_query($conn, "UPDATE users SET lockout_time='" . (time() + $lockout_time) . "' WHERE email='$email'");
+        echo "<div class='message'><p>Your account is locked. Try again after 15 minutes.</p></div>";
+        exit;
+    }
+                  
       } else {
 
 
