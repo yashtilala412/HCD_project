@@ -118,7 +118,11 @@ mysqli_query($conn, "UPDATE users SET last_ip='$ip_address' WHERE id=" . $_SESSI
         echo "<div class='message'><p>Your account is locked. Try again after 15 minutes.</p></div>";
         exit;
     }
-                  
+    if ($row['lockout_time'] > time()) {
+      echo "<div class='message'><p>Your account is locked. Please wait.</p></div>";
+      exit;
+  }
+                    
       } else {
 
 
