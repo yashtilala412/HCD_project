@@ -62,6 +62,12 @@ if (session_status() === PHP_SESSION_NONE) {
   if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
     die("Invalid CSRF token.");
 }
+$inactive = 600; // 10 minutes
+if (isset($_SESSION['timeout']) && (time() - $_SESSION['timeout']) > $inactive) {
+    session_unset();
+    session_destroy();
+}
+$_SESSION['timeout'] = time();
 
                 
 
