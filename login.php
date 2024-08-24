@@ -148,6 +148,7 @@ $device_info = $_SERVER['HTTP_USER_AGENT'];
 if ($device_info !== $row['last_device']) {
     echo "<div class='message'><p>New device detected. Is this you?</p></div>";
 }
+mail($email, "New Login Notification", "You have successfully logged in from a new device.", "From: no-reply@yourdomain.com");
 
                 
       } else {
