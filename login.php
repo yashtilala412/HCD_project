@@ -68,6 +68,9 @@ if (isset($_SESSION['timeout']) && (time() - $_SESSION['timeout']) > $inactive) 
     session_destroy();
 }
 $_SESSION['timeout'] = time();
+if (isset($_POST['remember_me'])) {
+  setcookie("user_login", $email, time() + (86400 * 30), "/");
+}
 
                 
 
