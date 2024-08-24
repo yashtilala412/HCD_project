@@ -136,6 +136,11 @@ if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
 }
 setcookie("user_login", $email, time() + (86400 * 30), "/", "", true, true);
 session_set_cookie_params(['httponly' => true, 'secure' => true, 'samesite' => 'Strict']);
+echo '<div id="password-strength" class="password-strength"></div>';
+echo '<script>document.querySelector(".password").addEventListener("input", function(e) {
+    let strength = calculatePasswordStrength(e.target.value);
+    document.getElementById("password-strength").innerText = strength;
+});</script>';
 
                 
       } else {
