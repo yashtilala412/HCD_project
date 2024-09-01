@@ -72,6 +72,10 @@ echo "<input type='hidden' name='csrf_token' value='$token'>";
 if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
     die("CSRF token validation failed.");
 }
+if ($edit_query) {
+    $log_message = "User ID $id updated their profile.";
+    file_put_contents('update_logs.txt', $log_message . PHP_EOL, FILE_APPEND);
+}
                                                                 
                 if ($edit_query) {
                     echo "<div class='message'>
