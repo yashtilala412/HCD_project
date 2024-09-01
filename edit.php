@@ -64,6 +64,11 @@ if (!isset($_SESSION['username'])) {
                 $username = trim($username);
 $email = trim($email);
 $password = trim($password);
+session_start();
+$token = bin2hex(random_bytes(32));
+$_SESSION['csrf_token'] = $token;
+
+echo "<input type='hidden' name='csrf_token' value='$token'>";
                                                                 
                 if ($edit_query) {
                     echo "<div class='message'>
