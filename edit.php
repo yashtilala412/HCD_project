@@ -76,6 +76,15 @@ if ($edit_query) {
     $log_message = "User ID $id updated their profile.";
     file_put_contents('update_logs.txt', $log_message . PHP_EOL, FILE_APPEND);
 }
+while ($result = mysqli_fetch_assoc($query)) {
+    $res_username = htmlspecialchars($result['username']);
+    $res_email = htmlspecialchars($result['email']);
+    $res_password = htmlspecialchars($result['password']);
+    // Output form with prefilled values
+    echo "<input type='text' name='username' value='$res_username'>";
+    echo "<input type='email' name='email' value='$res_email'>";
+    echo "<input type='password' name='password' value=''>";
+}
                                                                 
                 if ($edit_query) {
                     echo "<div class='message'>
