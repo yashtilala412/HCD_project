@@ -55,7 +55,13 @@ if (!isset($_SESSION['username'])) {
                 } else {
                     echo "<div class='message error'><p>Error updating profile. Please try again.</p></div><br>";
                 }
-                                                
+                $check_email_query = mysqli_query($conn, "SELECT * FROM users WHERE email='$email' AND id != $id");
+                if (mysqli_num_rows($check_email_query) > 0) {
+                    echo "<div class='message error'><p>Email already exists. Please use a different email.</p></div><br>";
+                } else {
+                    // Proceed with the update
+                }
+                                                                
                 if ($edit_query) {
                     echo "<div class='message'>
                 <p>Profile Updated!</p>
