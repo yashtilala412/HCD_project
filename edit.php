@@ -50,7 +50,12 @@ if (!isset($_SESSION['username'])) {
                 
                     // ... rest of the code
                 }
-                                
+                if ($edit_query) {
+                    echo "<div class='message success'><p>Profile Updated!</p></div><br>";
+                } else {
+                    echo "<div class='message error'><p>Error updating profile. Please try again.</p></div><br>";
+                }
+                                                
                 if ($edit_query) {
                     echo "<div class='message'>
                 <p>Profile Updated!</p>
