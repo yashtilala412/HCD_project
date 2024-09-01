@@ -85,6 +85,16 @@ while ($result = mysqli_fetch_assoc($query)) {
     echo "<input type='email' name='email' value='$res_email'>";
     echo "<input type='password' name='password' value=''>";
 }
+<script>
+document.getElementById('updateForm').onsubmit = function() {
+    var email = document.getElementById('email').value;
+    if (!email.includes('@')) {
+        alert('Please enter a valid email address.');
+        return false;
+    }
+    return true;
+};
+</script>
                                                                 
                 if ($edit_query) {
                     echo "<div class='message'>
