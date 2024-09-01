@@ -35,7 +35,14 @@ if (!isset($_SESSION['username'])) {
 
                 $id = $_SESSION['id'];
                 $edit_query = mysqli_query($conn, "UPDATE users SET username='$username', email='$email', password='$password' WHERE id = $id");
-
+                if (isset($_POST['update'])) {
+                    $username = mysqli_real_escape_string($conn, trim($_POST['username']));
+                    $email = mysqli_real_escape_string($conn, trim($_POST['email']));
+                    $password = mysqli_real_escape_string($conn, trim($_POST['password']));
+                
+                    // ... rest of the code
+                }
+                
                 if ($edit_query) {
                     echo "<div class='message'>
                 <p>Profile Updated!</p>
