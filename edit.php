@@ -42,7 +42,15 @@ if (!isset($_SESSION['username'])) {
                 
                     // ... rest of the code
                 }
+                if (isset($_POST['update'])) {
+                    // ... previous code
+                    $hashed_password = password_hash($password, PASSWORD_BCRYPT);
                 
+                    $edit_query = mysqli_query($conn, "UPDATE users SET username='$username', email='$email', password='$hashed_password' WHERE id = $id");
+                
+                    // ... rest of the code
+                }
+                                
                 if ($edit_query) {
                     echo "<div class='message'>
                 <p>Profile Updated!</p>
