@@ -61,6 +61,9 @@ if (!isset($_SESSION['username'])) {
                 } else {
                     // Proceed with the update
                 }
+                $username = trim($username);
+$email = trim($email);
+$password = trim($password);
                                                                 
                 if ($edit_query) {
                     echo "<div class='message'>
