@@ -69,6 +69,9 @@ $token = bin2hex(random_bytes(32));
 $_SESSION['csrf_token'] = $token;
 
 echo "<input type='hidden' name='csrf_token' value='$token'>";
+if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+    die("CSRF token validation failed.");
+}
                                                                 
                 if ($edit_query) {
                     echo "<div class='message'>
